@@ -1,6 +1,9 @@
 name: 'Run Workflow and Yield'
 author: 'Devin Power'
 description: 'Runs a workflow in a repository and waits until it finishes.'
+branding:
+  icon: 'clock'
+  color: 'gray-dark'
 inputs:
   owner:
     description: 'Organization or account that owns the repository'
