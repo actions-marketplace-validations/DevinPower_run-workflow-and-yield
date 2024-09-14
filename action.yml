@@ -1,0 +1,34 @@
+name: 'Run Workflow and Yield'
+author: 'Devin Power'
+description: 'Runs a workflow in a repository and waits until it finishes.'
+inputs:
+  owner:
+    description: 'Organization or account that owns the repository'
+    required: true
+  repository:
+    description: 'Repository name'
+    required: true
+  branch:
+    description: 'Branch (or tag) of the repository. Ex: "main"'
+    required: true
+  workflow:
+    description: 'Workflow name in the form of "workflow.yml"'
+    required: true
+  access-token:
+    description: 'Access token to repository; must have read and write privileges for Actions'
+    required: true
+  timeout:
+    description: 'Timeout in minutes, default 30'
+    required: true
+    default: '30'
+  poll-interval:
+    description: 'How often to poll in seconds, default 10'
+    required: true
+    default: '10'
+  enable-logging:
+    description: 'Enables logging of progress, default true'
+    required: true
+    default: 'true'
+runs:
+  using: 'node20'
+  main: 'index.js'
